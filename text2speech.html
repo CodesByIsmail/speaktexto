@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Speech</title>
+  <script src="js/text2speech.js" defer></script>
+  <link rel="stylesheet" href="css/text2speech.css">
+</head>
+<body>
+
+  <main class="container">
+    
+    <header class="header">
+      <h1>Text to Speech</h1>
+      <p>Convert your text into spoken audio</p>
+    </header>
+
+    <div class="field-group">
+      <label for="languageSelect">Select Language</label>
+      <select id="languageSelect">
+        <option value="">-- Choose Language --</option>
+        <option value="ar_SA">Arabic</option>
+        <option value="ha_NG">Hausa (Nigeria)</option>
+        <option value="yo_NG">Yoruba (Nigeria)</option>
+        <option value="en_NG">English (Nigeria)</option>
+        <option value="en_GB">English (British)</option>
+        <option value="en_US">English (US)</option>
+        <option value="fr_FR">French</option>
+      </select>
+    </div>
+
+    <div class="field-group">
+      <label for="textInput">Input Text</label>
+      <textarea id="textInput" rows="5" placeholder="Type or paste your text here..."></textarea>
+    </div>
+
+    <div class="field-group">
+      <div class="slider-header">
+        <label for="pace">Playback Speed</label>
+      </div>
+      <input type="range" id="pace" min="0.5" max="2" step="0.1" value="1">
+    </div>
+
+    <div class="controls">
+      <button id="playBtn" class="btn btn-primary">Play</button>
+      <button id="pauseBtn" class="btn btn-secondary">Pause</button>
+      <button id="continueBtn" class="btn btn-secondary">Resume</button>
+      <button id="stopBtn" class="btn btn-danger">Stop</button>
+    </div>
+
+  </main>
+
+</body>
+</html>

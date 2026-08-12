@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speech-to-Text</title>
+    <link rel="stylesheet" href="css/speech2text.css">
+    <script src="js/speech2text.js" defer></script>
+</head>
+
+<body>
+  
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <span class="mic-icon">
+                    <svg class="icon">
+    <use href="icon.svg#icon-voice"></use>
+</svg>
+                </span>
+                <h1>Speech-to-Text</h1>
+            </div>
+            <div class="language-selector">
+                <select id="languageSelect" class="styled-select">
+                    <option value="">-- Select Language --</option>
+                      <option value="ar-SA">Arabic</option>
+                      <option value="ha-NG">Hausa (Nigeria)</option>
+                     <option value="yo-NG">Yoruba (Nigeria)</option>
+    <option value="en-NG">English (Nigeria)</option>
+    <option value="en-GB">English (British)</option>
+    <option value="en-EN">English (US)</option>
+    <option value="fr-FR">French</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="transcript-card">
+            <div class="card-header">
+                <span class="card-title">Live Transcript</span>
+                <button id="copyBtn" class="secondary-btn"><svg class="icon" aria-hidden="true">
+  <use href="icon.svg#icon-copy"></use>
+</svg></button>
+            </div>
+            <textarea 
+                id="transcriptOutput" 
+                class="transcript-area" 
+                placeholder="Set Language, click 'Start Recording' and begin speaking..."
+            ></textarea>
+        </section>
+
+        <section class="controls-card">
+            <div class="status-indicator">
+                <span id="statusDot" class="dot"></span>
+                <span id="statusText" class="status-label">Ready</span>
+            </div>
+
+            <div class="button-group">
+                <button onclick="startSpeech()" id="startBtn" class="btn btn-primary">
+                    <span class="btn-icon">▶</span> Start Recording
+                </button>
+                <button onclick="stopSpeech()" id="stopBtn" class="btn btn-danger">
+                    <span class="btn-icon">■</span> Stop
+                </button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+
+  :root {
+  /* Backgrounds */
+  --bg-0: #F5F7FB;        /* Main background */
+  --bg-1: #FFFFFF;        /* Secondary background */
+
+  /* Panels / Cards */
+  --panel: #FFFFFF;       /* Cards, sidebar, editor panels */
+  --panel-hover: #F0F4FA; /* Hover state */
+
+  /* Borders / Lines */
+  --line: #DCE3EE;
+
+  /* Text */
+  --ink: #172033;         /* Primary text */
+  --ink-dim: #6B7890;     /* Secondary / muted text */
+}
+
+
+[data-theme = "dark"]{
+    --bg-0:#080D18;
+    --bg-1:#0E1626;
+    --panel:#111B2E;
+    --panel-hover:#152036;
+    --line:#243352;
+    --ink:#DCE3F2;
+    --ink-dim:#8695B3;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 82% 8%, rgba(142,127,203,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 10% 90%, rgba(63,207,192,0.10), transparent 60%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1));
+      background-repeat: no-repeat;
+      height: 100vh;
+    padding: 3rem 2rem;
+    
+  }
+  
+  .icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  color: currentColor;
+}
+
+.theme__toggler{
+  padding: .2rem;
+  border-radius: 7px;
+  border: none;
+  background: var(--ink);
+  color: var(--panel);
+}
+  
+  nav{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button:active{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 3px #00000042;
+  }
+  
+  h1{
+    color: var(--ink);
+    
+  }
+  
+  .features{
+    margin-top: 3rem;
+    
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  
+  }
+  
+  .feature{
+    background: var(--panel);
+    padding: 1rem;
+display:flex;
+gap: 1rem;
+flex-direction:column;
+text-align: left;
+width: 100%;
+border-radius: 5px;
+border: 1px solid var(--ink);
+color: var(--ink);
+
+.top{
+  display: flex;
+  justify-content: space-between;
+}
+}
+  .feature h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:18px;
+    font-weight:700;
+    margin:0;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    
+  }
+  .feature p{
+    font-size:13px;
+    line-height:1.55;
+    color:var(--ink-dim);
+    margin:0;
+    flex:1;
+  }
+  
+  
+  @media screen and ( min-width: 760px) {
+    .features{
+      flex-direction: row;
+    }
+  }
