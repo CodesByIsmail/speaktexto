@@ -60,6 +60,31 @@
       flex-direction: column;
       gap: 1.5rem;
     }
+    
+    .error_bg{
+    background: var(--card-bg);
+    border-left: 3px var(--danger) solid;
+    border-radius: 5px 0 0 5px;
+    padding: 1rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: -10%;
+    transition: 1s;
+    
+    span{
+        color: var(--text-main);
+    }
+}
+
+.error_bg.active{
+top: 5%;
+}
+
 
     /* Header */
     .header {
@@ -188,4 +213,3 @@
     .btn-danger:hover {
       background-color: var(--danger-hover);
     }
-  </style>

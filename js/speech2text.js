@@ -1,6 +1,7 @@
 const languagePicker = document.querySelector('select');
 const langIndicator = document.querySelector('.langIndicator')
 const textArea = document.querySelector('textarea')
+const errorTextBg = document.querySelector('.error_bg');
 const statusIndicator = document.querySelector('.status-indicator')
 const copyBtn = document.querySelector('#copyBtn')
 const startBtn = document.querySelector('#startBtn')
@@ -57,15 +58,18 @@ if (!SpeechRecognition) {
   
   recognition.onerror = (e) =>{
     console.log('Error', e)
+    displayErr(e.error)
     handleBtnText(startBtn)
   }
 }
 
 function startSpeech() {
-  if(isListening) return
+  try {
+    if(isListening) return
   let lang = languagePicker.value;
   if(!lang) {
-    languagePicker.classList.add('danger')
+    languagePicker.classList.add('danger');
+    throw new Error('Select a Language!')
     return
   }
   isListening = true;
@@ -73,6 +77,9 @@ function startSpeech() {
   recognition.lang = lang;
   console.log(recognition)
   recognition.start()
+  } catch (e) {
+    displayErr(e.message)
+  }
 }
 
 function stopSpeech() {
@@ -114,7 +121,13 @@ function handleBtnText(btn) {
 
 
 
-
+function displayErr(errMessage) {
+  errorTextBg.querySelector('span').innerHTML = errMessage
+    errorTextBg.classList.add('active')
+    setTimeout(()=>{
+      errorTextBg.classList.remove('active')
+    }, 2000)
+}
 
 window.addEventListener('load', ()=>{
   let theme = localStorage.getItem('theme');

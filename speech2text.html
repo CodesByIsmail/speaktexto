@@ -10,7 +10,12 @@
 </head>
 
 <body>
-  
+    
+
+  <p class="error_bg">
+<svg class="icon" width="20" height="20">
+  <use href="icon.svg#icon-error"></use>
+</svg>Error: <span class="error_text"></span></p>
     <header class="app-header">
         <div class="header-container">
             <div class="brand">
@@ -41,9 +46,12 @@
         <section class="transcript-card">
             <div class="card-header">
                 <span class="card-title">Live Transcript</span>
-                <button id="copyBtn" class="secondary-btn"><svg class="icon" aria-hidden="true">
+                <button id="copyBtn" class="secondary-btn">
+                        <svg class="icon" width="20" height="20">
   <use href="icon.svg#icon-copy"></use>
-</svg></button>
+</svg>
+
+                </button>
             </div>
             <textarea 
                 id="transcriptOutput" 

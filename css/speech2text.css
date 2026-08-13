@@ -68,6 +68,31 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
+}
+
+.error_bg{
+    background: var(--danger-bg);
+    border-left: 3px var(--danger-color) solid;
+    border-radius: 5px 0 0 5px;
+    padding: 1rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: -10%;
+    transition: 1s;
+    
+    span{
+        color: var(--danger-color);
+    }
+}
+
+.error_bg.active{
+top: 5%;
 }
 
 /* --- Header Section --- */

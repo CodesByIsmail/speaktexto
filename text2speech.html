@@ -9,6 +9,10 @@
 </head>
 <body>
 
+  <p class="error_bg">
+<svg class="icon" width="20" height="20">
+  <use href="icon.svg#icon-error"></use>
+</svg>Error: <span class="error_text"></span></p>
   <main class="container">
     
     <header class="header">
@@ -36,10 +40,26 @@
     </div>
 
     <div class="field-group">
-      <div class="slider-header">
+<div class="range__ctrl">
+        <div class="slider-header playback-range">
         <label for="pace">Playback Speed</label>
       </div>
       <input type="range" id="pace" min="0.5" max="2" step="0.1" value="1">
+</div>
+
+<div class="range__ctrl">
+        <div class="slider-header volume-range">
+        <label for="pace">Volume</label>
+      </div>
+      <input type="range" id="pace" min="0.5" max="2" step="0.1" value="1">
+</div>
+
+<div class="range__ctrl">
+  <div class="slider-header pitch-range">
+    <label for="pace">Pitch</label>
+  </div>
+  <input type="range" id="pace" min="0.5" max="2" step="0.1" value="1">
+</div>
     </div>
 
     <div class="controls">
